@@ -14,7 +14,6 @@ nav {
     display: flex;
     justify-content: space-between;
     padding-right: 20px;
-
 }
 
 .menu > ul > li {
@@ -36,5 +35,4 @@ nav {
 .nav-link:hover {
     color: rgb(163 230 53);
     border-bottom:  2px solid rgb(163 230 53); ;
-    
 }

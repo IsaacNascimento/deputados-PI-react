@@ -12,6 +12,7 @@ const Navbar = () => {
                 <ul>
                     <li><Link to="/" className="nav-link">Home</Link></li>
                     <li><a href="#deputados" className="nav-link">Deputados</a></li>
+                    <li><Link to="/grafico" className="nav-link">Graficos</Link></li>
                 </ul>
             </div>
         </nav>
