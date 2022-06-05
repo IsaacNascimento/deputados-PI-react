@@ -17,13 +17,13 @@ export const DeputadosDetalhes = () => {
   const data = { 
     labels: [
       '2018', 
-      '2019', // aqui fica os nomes da parte de baixo dos graficos
+      '2019', // aqui dentro a gente faz um loop por ano, exemplo: deputados.map((item) => item.ano)
       '2021',
       '2022'
     ],
     datasets: [{
       label: 'Dados de Gastos',
-      data: [300, 50, 100, 200], // aqui dentro a gente faz um loop por ano, exemplo: deputados.map((item) => item.ano)
+      data: [300, 50, 100, 200], // aqui dentro a gente faz um loop de gastos, exemplo: deputados.map((item) => item.gastos)
       backgroundColor: [
         'rgb(255, 0, 0)',
         'rgb(54, 162, 235)',
