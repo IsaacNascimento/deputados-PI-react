@@ -1,12 +1,12 @@
-import axios from "axios";
+import axios from 'axios';
 
 const ApiDeputados = axios.create({
   baseURL: 'https://dadosabertos.camara.leg.br/api/v2',
-})
+});
 
 const getAllDeputados = async () => {
   const response = await axios.get(
-    "https://dadosabertos.camara.leg.br/api/v2/deputados"
+    'https://dadosabertos.camara.leg.br/api/v2/deputados'
   );
 
   return response.data;
@@ -14,7 +14,7 @@ const getAllDeputados = async () => {
 
 const getDeputadoByid = async (query) => {
   const response = await axios.get(
-    "https://dadosabertos.camara.leg.br/api/v2/deputados/?nome=" + query
+    'https://dadosabertos.camara.leg.br/api/v2/deputados/?nome=' + query
   );
 
   return response.data.dados;
@@ -22,7 +22,7 @@ const getDeputadoByid = async (query) => {
 
 const getDeputadoDetail = async (id) => {
   const response = await axios.get(
-    "https://dadosabertos.camara.leg.br/api/v2/deputados/" + id
+    'https://dadosabertos.camara.leg.br/api/v2/deputados/' + id
   );
 
   return response.data.dados;
@@ -36,4 +36,10 @@ const getDeputadoDespesas = async (id) => {
   return response.data.dados;
 };
 
-export { getAllDeputados, getDeputadoByid, getDeputadoDetail, ApiDeputados, getDeputadoDespesas };
+export {
+  getAllDeputados,
+  getDeputadoByid,
+  getDeputadoDetail,
+  ApiDeputados,
+  getDeputadoDespesas,
+};
