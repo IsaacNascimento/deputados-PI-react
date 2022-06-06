@@ -68,7 +68,7 @@ export const DeputadosDetalhes = () => {
         </div>    
         <div md={6}>
           <div className="textosub">
-            <h1><IoLogoUsd className="text-primary" /> Gastos feito pelo Deputado <IoLogoUsd /></h1>
+            <h1 className="text-primary">Gastos feito pelo Deputado {deputados.nomeCivil} </h1>
           </div>
           <div className="grafico" style={{ width: 700 }}>
             <BarChart chartData={data} />

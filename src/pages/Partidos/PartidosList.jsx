@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { CardPartidos } from "../../components/CardPartidos";
 import "../../css/home.css";
 import { getAllPartidos, getPartidoByName } from "../../service/partidos";
+import "../../css/table.css";
+import { Link, useParams } from "react-router-dom";
 
 export const PartidosList = () => {
   const [partidos, setPartidos] = useState();
   const [query, setQuery] = useState("");
+  const params = useParams();
   console.log(partidos);
 
   const [page, setPage] = useState(1);
@@ -58,20 +61,34 @@ export const PartidosList = () => {
         />
         <button onClick={buscarPartido}>Buscar</button>
       </div>
-      <div className="container">
+      <table className="centralize">
+        <tr>
+          <th>NUMERO</th>
+          <th>SIGLA</th>
+          <th>NOME</th>
+          <th>Detalhes</th>
+        </tr>
         {paginado?.map((item) => (
-          <CardPartidos
-            key={item.id}
-            id={item.id}
-            sigla={item.sigla}
-            nome={item.nome}
-          ></CardPartidos>
+         <>
+          <tr>
+            <td>{item.id}</td>
+            <td>{item.sigla}</td>
+            <td>{item.nome}</td>
+            <Link className="decoration-none" to={`/partidos/${item.id}`}>
+            <td>Ver</td>
+         </Link> 
+          </tr>
+         </> 
         ))}
-      </div>
+      </table>
       <div className="paginacao">
-        <button className="botao" onClick={prevPage}>Anterior</button>
+        <button className="botao" onClick={prevPage}>
+          Anterior
+        </button>
         {page} / {totalPages}
-        <button className="botao" onClick={nextPage}>Próxima</button>
+        <button className="botao" onClick={nextPage}>
+          Próxima
+        </button>
       </div>
     </>
   );
