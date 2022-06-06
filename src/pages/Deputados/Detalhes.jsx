@@ -11,7 +11,6 @@ import { BarChart, PieChart } from "../../components/Charts";
 export const DeputadosDetalhes = () => {
   const [deputados, setDeputados] = useState([]);
   const [despesas, SetDespesas] = useState([]);
-  console.log("[DESPESAS]: ", despesas);
   const params = useParams();
 
 
