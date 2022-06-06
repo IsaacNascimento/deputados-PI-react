@@ -71,9 +71,9 @@ export function Home() {
           />
         ))}
         <div>
-          <button onClick={prevPage}>Anterior</button>
+          <button className="botao" onClick={prevPage}>Anterior</button>
           {page} /{totalPages}
-          <button onClick={nextPage}>Próxima</button>
+          <button className="botao" onClick={nextPage}>Próxima</button>
         </div>
       </div>
     </>
