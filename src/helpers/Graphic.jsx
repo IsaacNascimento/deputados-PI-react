@@ -6,7 +6,6 @@ import { getDeputadoDespesas } from "../service/deputados";
 export const Data = (id) => {
   const [despesas, SetDespesas] = useState([]);
   const params = useParams();
-  console.log(despesas);
 
   useEffect(() => {
     getDeputadoDespesas(id).then((response) => SetDespesas(response));
