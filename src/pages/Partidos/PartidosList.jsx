@@ -67,11 +67,11 @@ export const PartidosList = () => {
             nome={item.nome}
           ></CardPartidos>
         ))}
-        <div>
-          <button onClick={prevPage}>Anterior</button>
-          {page} /{totalPages}
-          <button onClick={nextPage}>Próxima</button>
-        </div>
+      </div>
+      <div className="paginacao">
+        <button className="botao" onClick={prevPage}>Anterior</button>
+        {page} / {totalPages}
+        <button className="botao" onClick={nextPage}>Próxima</button>
       </div>
     </>
   );

@@ -6,6 +6,7 @@ import {
   getDeputadoDetail,
 } from "../../service/deputados";
 import { BarChart } from "../../components/Charts";
+import {IoLogoUsd} from 'react-icons/io5';
 
 export const DeputadosDetalhes = () => {
   const [deputados, setDeputados] = useState([]);
@@ -48,31 +49,25 @@ export const DeputadosDetalhes = () => {
   return (
     <>
       <div className="container-detalhes">
-        <h1 className="mt-3">{deputados.nomeCivil}</h1>
-        <div sm={6} md={4} xl={3}>
-          <h4>
-            Munícipio/Origem: {deputados.municipioNascimento}/
-            {deputados.ufNascimento}
-          </h4>
-          <h4>Escolaridade: {deputados.escolaridade}</h4>
-          <h4>Data de Nascimento: {deputados.dataNascimento}</h4>
-          <h4>Estado eleito(a): {deputados.ultimoStatus?.siglaUf}</h4>
-          <h4>Partido afiliado(a): {deputados.ultimoStatus?.siglaPartido}</h4>
-          <img
-            className="img-detalhes" 
-            variant="top"
-            src={deputados.ultimoStatus?.urlFoto}
-            alt="Imagem deputado Detalhe"
-          />
+        <div className="texto1">
+          <h1>{deputados.nomeCivil}</h1>
         </div>
-        <div>
+        <div >
+          <h4 className="aliamento">Munícipio/Origem: {deputados.municipioNascimento}/{deputados.ufNascimento}</h4>
+          <h4 className="aliamento">Escolaridade: {deputados.escolaridade}</h4>
+          <h4 className="aliamento">Data de Nascimento: {deputados.dataNascimento}</h4>
+          <h4 className="aliamento">Estado eleito(a): {deputados.ultimoStatus?.siglaUf}</h4>
+          <h4 className="aliamento">Partido afiliado(a): {deputados.ultimoStatus?.siglaPartido}</h4>
+        <div className="aliamento">
           <Link to={-1} className="botao">Voltar</Link>
         </div>
+          <img className="img-detalhes" variant="top" src={deputados.ultimoStatus?.urlFoto} alt="Imagem deputado Detalhe"/>
+        </div>    
         <div md={6}>
-          <div>
-            <h1>Gastos feito por Deputados</h1>
+          <div className="textosub">
+            <h1><IoLogoUsd className="text-primary" /> Gastos feito pelo Deputados <IoLogoUsd /></h1>
           </div>
-          <div style={{ width: 700 }}>
+          <div className="grafico" style={{ width: 700 }}>
             <BarChart chartData={data} />
           </div>
         </div>

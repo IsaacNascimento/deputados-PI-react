@@ -5,8 +5,21 @@
     margin-top: 10px;
 }
 
+.aliamento {
+    margin-left: 400px;
+    margin-top: 20;
+}
 .img-detalhes {
+    display: flex;
     width: 30%;
+    margin-top: -280px;
+}
+.textosub {
+    margin-left: 120px;
+    padding-top: 15px;
+}
+.grafico {
+    padding-top: 15px; 
 }
 .botao {
     background-color: #0c5E3D;
@@ -26,4 +39,7 @@
 .botao:hover {
     background-color: #0e7c26;
     color: white;
+}
+.grafic {
+    display: flex;
 }
