@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Card from "../../components/Card";
-import "../../css/home.css";
-import { getAllDeputados, getDeputadoByid } from "../../service/deputados";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import CardDeputados from '../../components/CardDeputados';
+import '../../css/home.css';
+import { getAllDeputados, getDeputadoByid } from '../../service/deputados';
 
 export function Home() {
   const [deputados, setDeputados] = useState([]);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const [perPage] = useState(12);
 
   let lastIndex = page * perPage;
   let firstIndex = lastIndex - perPage;
   const totalPages = Math.ceil(deputados.length / perPage);
-
 
   const paginado =
     deputados < perPage ? deputados : deputados.slice(firstIndex, lastIndex);
@@ -63,7 +62,7 @@ export function Home() {
       </div>
       <div className="container" id="deputados">
         {paginado.map((item) => (
-          <Card
+          <CardDeputados
             key={item.id}
             id={item.id}
             img={item.urlFoto}
@@ -72,9 +71,13 @@ export function Home() {
           />
         ))}
         <div>
-          <button onClick={prevPage}>Anterior</button>
+          <button className="botao" onClick={prevPage}>
+            Anterior
+          </button>
           {page} /{totalPages}
-          <button onClick={nextPage}>Próxima</button>
+          <button className="botao" onClick={nextPage}>
+            Próxima
+          </button>
         </div>
       </div>
     </>

@@ -1,10 +1,30 @@
 .container-detalhes {
     padding: 20px 50px 20px 50px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin-top: 10px;
+    column-count: 2;
 }
 
 .img-detalhes {
     width: 30%;
+}
+.botao {
+    background-color: #0c5E3D;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    -webkit-transition-duration: 0.6s; 
+    transition-duration: 0.4s;
+}
+.botao:hover {
+    background-color: #0e7c26;
+    color: white;
 }
