@@ -14,7 +14,6 @@ export function Home() {
   let firstIndex = lastIndex - perPage;
   const totalPages = Math.ceil(deputados.length / perPage);
 
-
   const paginado =
     deputados < perPage ? deputados : deputados.slice(firstIndex, lastIndex);
 

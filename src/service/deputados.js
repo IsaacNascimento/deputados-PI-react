@@ -28,4 +28,12 @@ const getDeputadoDetail = async (id) => {
   return response.data.dados;
 };
 
-export { getAllDeputados, getDeputadoByid, getDeputadoDetail, ApiDeputados };
+const getDeputadoDespesas = async (id) => {
+  const response = await axios.get(
+    `https://dadosabertos.camara.leg.br/api/v2/deputados/${id}/despesas?`
+  );
+
+  return response.data.dados;
+};
+
+export { getAllDeputados, getDeputadoByid, getDeputadoDetail, ApiDeputados, getDeputadoDespesas };

@@ -1,44 +1,50 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ApiDeputados, getDeputadoDetail } from "../../service/deputados";
 import "../../css/detalhes.css";
-import BarChart from "../../components/BarChart";
-import PieChart from "../../components/PieChart";
+import {
+  getDeputadoDespesas,
+  getDeputadoDetail,
+} from "../../service/deputados";
+import { Data } from "../../helpers/Graphic";
+import { BarChart, PieChart } from "../../components/Charts";
 
 export const DeputadosDetalhes = () => {
   const [deputados, setDeputados] = useState([]);
-
+  const [despesas, SetDespesas] = useState([]);
+  console.log("[DESPESAS]: ", despesas);
   const params = useParams();
+
+
+  const data = {
+    labels: despesas.map(item => item.mes),
+    datasets: [
+      {
+        label: "Dados de Gastos",
+        data: despesas.map(item => item.valorDocumento), // aqui dentro a gente faz um loop por ano, exemplo: deputados.map((item) => item.ano)
+        backgroundColor: [
+          "rgb(255, 0, 0)",
+          "rgb(54, 162, 235)",
+          "rgb(255, 205, 86)",
+          "rgb(0, 255, 127)",
+        ],
+        hoverOffset: 4,
+      },
+    ],
+  };
 
   useEffect(() => {
     getDeputadoDetail(params.id).then((response) => setDeputados(response));
-  }, []);
+  }, [params.id]);
 
-  const data = { 
-    labels: [
-      '2018', 
-      '2019', // aqui fica os nomes da parte de baixo dos graficos
-      '2021',
-      '2022'
-    ],
-    datasets: [{
-      label: 'Dados de Gastos',
-      data: [300, 50, 100, 200], // aqui dentro a gente faz um loop por ano, exemplo: deputados.map((item) => item.ano)
-      backgroundColor: [
-        'rgb(255, 0, 0)',
-        'rgb(54, 162, 235)',
-        'rgb(255, 205, 86)',
-        'rgb(0, 255, 127)'
-      ],
-      hoverOffset: 4
-    }]
-  };
+  useEffect(() => {
+    getDeputadoDespesas(params.id).then((response) => SetDespesas(response));
+  }, [params.id]);
 
   return (
     <>
       <div className="container-detalhes">
         <h1 className="mt-3">{deputados.nomeCivil}</h1>
-        <div>
+        <div sm={6} md={4} xl={3}>
           <h4>
             Munícipio/Origem: {deputados.municipioNascimento}/
             {deputados.ufNascimento}
@@ -48,21 +54,18 @@ export const DeputadosDetalhes = () => {
           <h4>Estado eleito(a): {deputados.ultimoStatus?.siglaUf}</h4>
           <h4>Partido afiliado(a): {deputados.ultimoStatus?.siglaPartido}</h4>
           <img
-            className="img-detalhes"
+            className="img-detalhes" 
             variant="top"
             src={deputados.ultimoStatus?.urlFoto}
             alt="Imagem deputado Detalhe"
           />
         </div>
-        <div >
+        <div md={6}>
           <div className="text-center">
             <h1>Gastos feito por Deputados</h1>
           </div>
           <div style={{ width: 700 }}>
-            <BarChart chartData={data} /> 
-          </div>
-          <div style={{ width: 700 }}>
-            <PieChart chartData={data} />
+            <BarChart chartData={data} />
           </div>
         </div>
       </div>
