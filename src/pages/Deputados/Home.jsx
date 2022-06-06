@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Card from "../../components/Card";
+import CardDeputados from "../../components/CardDeputados";
 import "../../css/home.css";
 import { getAllDeputados, getDeputadoByid } from "../../service/deputados";
 
@@ -62,7 +62,7 @@ export function Home() {
       </div>
       <div className="container" id="deputados">
         {paginado.map((item) => (
-          <Card
+          <CardDeputados
             key={item.id}
             id={item.id}
             img={item.urlFoto}

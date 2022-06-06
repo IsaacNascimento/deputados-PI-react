@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../css/card.css";
 
-export default function Card({ img, nome, partido, id }) {
+export default function CardDeputados({ img, nome, partido, id }) {
   return (
     <div>
       <Link className="card-link" to={"/detalhes/" + id}>
