@@ -6,10 +6,13 @@ import {
   getDeputadoDetail,
 } from "../../service/deputados";
 import { BarChart } from "../../components/Charts";
+import { getPartidosByID } from "../../service/partidos";
 
 export const DeputadosDetalhes = () => {
   const [deputados, setDeputados] = useState([]);
   const [despesas, SetDespesas] = useState([]);
+  const [partidos, setPartidos] = useState([]);
+  console.log(partidos);
   const params = useParams();
 
   const data = {
@@ -40,8 +43,13 @@ export const DeputadosDetalhes = () => {
     ],
   };
 
+  const getPartido = () => {
+    getPartidosByID(params.id).then((results) => setPartidos(results));
+  }
+
   useEffect(() => {
     getDeputadoDetail(params.id).then((response) => setDeputados(response));
+    getPartido();
   }, [params.id]);
 
   useEffect(() => {
@@ -59,7 +67,9 @@ export const DeputadosDetalhes = () => {
           <h4 className="aliamento">Escolaridade: {deputados.escolaridade}</h4>
           <h4 className="aliamento">Data de Nascimento: {deputados.dataNascimento}</h4>
           <h4 className="aliamento">Estado eleito(a): {deputados.ultimoStatus?.siglaUf}</h4>
+          <Link to={''}>
           <h4 className="aliamento">Partido afiliado(a): {deputados.ultimoStatus?.siglaPartido}</h4>
+          </Link>
         <div className="aliamento">
           <Link to={-1} className="botao">Voltar</Link>
         </div>

@@ -50,3 +50,10 @@
   margin: 10px;
   align-content: space-between;
 }
+
+.img-urlFoto-partido {
+  width: 55px;
+  height: 45px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
