@@ -12,7 +12,6 @@ export const DeputadosDetalhes = () => {
   const [deputados, setDeputados] = useState([]);
   const [despesas, SetDespesas] = useState([]);
   const [partidos, setPartidos] = useState([]);
-  console.log(partidos);
   const params = useParams();
 
   const data = {
