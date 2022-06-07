@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Card, Col, Row } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
 import { getPartidosByID } from "../../service/partidos";
 
 export const PartidosDetalhes = () => {
   const [partido, setPartido] = useState([]);
-  console.log(partido);
+
   const [partidoMembro, setPartidoMembro] = useState([]);
+  console.log(partidoMembro)
   const params = useParams();
 
   useEffect(() => {
@@ -15,10 +17,25 @@ export const PartidosDetalhes = () => {
   return (
     <div>
         <div className="container-detalhes">
-        <div className="texto1">
-          <h1>{partido.sigla}</h1>
+          <div className="texto1">
+            <h1>{partido.sigla}</h1>
+            <img src={partido.urlLogo} alt="logo" />
+            <img src={partido.uriPartido}  alt="" />
+          </div>
         </div>
+        <div>
+        {partidoMembro.map((item) => (
+              <Col className="mb-3" md={2} key={item.id}>
+                <Link to={"/atores/" + item.id}>
+                  <Card title={item.name}>
+                    <Card.Img
+                      variant="top"
+                      src={item.urlFoto}/>
+                  </Card>
+                </Link>
+              </Col>
+            ))}
         </div>
-  </div>
-      )
+    </div>
+  )
 };

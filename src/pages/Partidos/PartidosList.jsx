@@ -61,26 +61,28 @@ export const PartidosList = () => {
         />
         <button onClick={buscarPartido}>Buscar</button>
       </div>
-      <table className="centralize">
-        <tr>
-          <th>NUMERO</th>
-          <th>SIGLA</th>
-          <th>NOME</th>
-          <th>Detalhes</th>
-        </tr>
-        {paginado?.map((item) => (
-         <>
+      <div className="centralize">
+        <table>
           <tr>
-            <td>{item.id}</td>
-            <td>{item.sigla}</td>
-            <td>{item.nome}</td>
-            <Link className="decoration-none" to={`/partidos/${item.id}`}>
-            <td>Ver</td>
-         </Link> 
+            <th>NUMERO</th>
+            <th>SIGLA</th>
+            <th>NOME</th>
+            <th>Detalhes</th>
           </tr>
-         </> 
-        ))}
-      </table>
+          {paginado?.map((item) => (
+          <>
+            <tr>
+              <td>{item.id}</td>
+              <td>{item.sigla}</td>
+              <td>{item.nome}</td>
+              <Link className="decoration-none" to={`/partidos/${item.id}`}>
+              <td>Ver</td>
+              </Link> 
+            </tr>
+          </> 
+          ))}
+        </table>
+      </div>
       <div className="paginacao">
         <button className="botao" onClick={prevPage}>
           Anterior
