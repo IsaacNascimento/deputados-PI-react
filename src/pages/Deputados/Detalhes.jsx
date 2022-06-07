@@ -67,9 +67,7 @@ export const DeputadosDetalhes = () => {
           <h4 className="aliamento">Escolaridade: {deputados.escolaridade}</h4>
           <h4 className="aliamento">Data de Nascimento: {deputados.dataNascimento}</h4>
           <h4 className="aliamento">Estado eleito(a): {deputados.ultimoStatus?.siglaUf}</h4>
-          <Link to={''}>
           <h4 className="aliamento">Partido afiliado(a): {deputados.ultimoStatus?.siglaPartido}</h4>
-          </Link>
         <div className="aliamento">
           <Link to={-1} className="botao">Voltar</Link>
         </div>
