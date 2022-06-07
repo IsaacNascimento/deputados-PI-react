@@ -6,7 +6,6 @@ import {
   getDeputadoDetail,
 } from "../../service/deputados";
 import { BarChart } from "../../components/Charts";
-import {IoLogoUsd} from 'react-icons/io5';
 
 export const DeputadosDetalhes = () => {
   const [deputados, setDeputados] = useState([]);
