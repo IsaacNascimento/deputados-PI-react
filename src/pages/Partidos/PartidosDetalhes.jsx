@@ -7,9 +7,7 @@ import CardDeputados from "../../components/CardDeputados";
 
 export const PartidosDetalhes = () => {
   const [partido, setPartido] = useState([]);
-  console.log(partido);
   const [partidoMembro, setPartidoMembro] = useState([]);
-  console.log(partidoMembro);
   const params = useParams();
 
   useEffect(() => {
