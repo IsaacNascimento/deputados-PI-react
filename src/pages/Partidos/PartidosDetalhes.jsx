@@ -27,6 +27,9 @@ export const PartidosDetalhes = () => {
           <img className="img-urlFoto-partido" src={partido.urlLogo} alt="Imagem do Deputado" />
           }
         </div>
+        <div className="aliament">
+          <Link to={-1} className="botao">Voltar</Link>
+        </div>  
         <div>
          <h2>Membros do partido {partido.sigla}</h2>
         </div>
@@ -41,9 +44,6 @@ export const PartidosDetalhes = () => {
             />
           ))}
         </div>
-        <div className="aliament">
-          <Link to={-1} className="botao">Voltar</Link>
-        </div>  
       </div>
     </div>
   );
