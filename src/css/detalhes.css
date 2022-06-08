@@ -20,6 +20,8 @@
 }
 .grafico {
   padding-top: 15px;
+  display: flex;
+  justify-content: center;
 }
 .botao {
   background-color: #0c5e3d;

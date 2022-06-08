@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getPartidosByID, getPartidosMembros } from "../../service/partidos";
 import "../../css/detalhes.css";
 import "../../css/home.css";
@@ -26,12 +26,12 @@ export const PartidosDetalhes = () => {
         <div className="texto1 align-items">
           <h1>{partido.sigla}</h1>
           {partido.urlLogo && 
-          <img className="img-urlFoto-partido" src={partido.urlLogo} alt="" />
+          <img className="img-urlFoto-partido" src={partido.urlLogo} alt="Imagem do Deputado" />
           }
         </div>
         <div>
          <h2>Membros do partido {partido.sigla}</h2>
-        </div>  
+        </div>
         <div className="container">
           {partidoMembro.map((item) => (
             <CardDeputados
@@ -43,6 +43,9 @@ export const PartidosDetalhes = () => {
             />
           ))}
         </div>
+        <div className="aliament">
+          <Link to={-1} className="botao">Voltar</Link>
+        </div>  
       </div>
     </div>
   );

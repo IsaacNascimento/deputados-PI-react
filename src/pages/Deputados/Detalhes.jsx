@@ -77,7 +77,9 @@ export const DeputadosDetalhes = () => {
           <div className="textosub">
             <h1 className="text-primary">Gastos feito pelo Deputado {deputados.nomeCivil} </h1>
           </div>
-          <div className="grafico" style={{ width: 700 }}>
+        </div>
+        <div className="grafico">
+          <div style={{ width: 700 }}>
             <BarChart chartData={data} />
           </div>
         </div>
