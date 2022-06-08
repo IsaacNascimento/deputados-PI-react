@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Card from "../../components/Card";
+import CardDeputados from "../../components/CardDeputados";
 import "../../css/home.css";
 import { getAllDeputados, getDeputadoByid } from "../../service/deputados";
 
@@ -13,7 +13,6 @@ export function Home() {
   let lastIndex = page * perPage;
   let firstIndex = lastIndex - perPage;
   const totalPages = Math.ceil(deputados.length / perPage);
-
 
   const paginado =
     deputados < perPage ? deputados : deputados.slice(firstIndex, lastIndex);
@@ -63,7 +62,7 @@ export function Home() {
       </div>
       <div className="container" id="deputados">
         {paginado.map((item) => (
-          <Card
+          <CardDeputados
             key={item.id}
             id={item.id}
             img={item.urlFoto}
@@ -71,11 +70,11 @@ export function Home() {
             partido={item.siglaPartido}
           />
         ))}
-        <div>
-          <button onClick={prevPage}>Anterior</button>
-          {page} /{totalPages}
-          <button onClick={nextPage}>Próxima</button>
-        </div>
+      </div>
+      <div className="paginacao">
+        <button className="botao" onClick={prevPage}>Anterior</button>
+        {page} / {totalPages}
+        <button className="botao" onClick={nextPage}>Próxima</button>
       </div>
     </>
   );
