@@ -1,0 +1,61 @@
+.container-detalhes {
+  padding: 20px 50px 20px 50px;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.aliamento {
+  margin-left: 400px;
+  margin-top: 20;
+}
+.img-detalhes {
+  display: flex;
+  width: 30%;
+  margin-top: -280px;
+}
+.textosub {
+  margin-left: 120px;
+  padding-top: 15px;
+}
+.grafico {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+.botao {
+  background-color: #0c5e3d;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.4s;
+}
+.botao:hover {
+  background-color: #0e7c26;
+  color: white;
+}
+.grafic {
+  display: flex;
+}
+
+.align-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  align-content: space-between;
+}
+
+.img-urlFoto-partido {
+  width: 55px;
+  height: 45px;
+  margin-top: 20px;
+  margin-left: 10px;
+}

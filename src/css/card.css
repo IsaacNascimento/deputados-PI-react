@@ -1,0 +1,33 @@
+.card {
+    background-color: #fafafa;
+    width: 300px;
+    border-radius: 10px 10px;
+    box-shadow: 2px 2px 2px 2px rgba(102, 101, 101, 0.4);
+    cursor: pointer;
+    border-color: rgb(5, 211, 5);
+}
+
+.card-img {
+    width: 300px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: ease-in 0.3s; 
+}
+
+.card-title {
+    padding-left: 4px;
+    text-align: center;
+}
+
+.card-footer {
+    padding-left: 4px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #000;
+}

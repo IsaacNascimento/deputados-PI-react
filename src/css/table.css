@@ -1,0 +1,30 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.centralize {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right:  50px;
+    margin-left: 50px;
+}
+
+.decoration-none {
+    text-decoration: none;
+}
+.aliament {
+  margin-top: 20;
+}
