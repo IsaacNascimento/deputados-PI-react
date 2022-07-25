@@ -6,10 +6,12 @@ import {
   getDeputadoDetail,
 } from "../../service/deputados";
 import { BarChart } from "../../components/Charts";
+import { getPartidosByID } from "../../service/partidos";
 
 export const DeputadosDetalhes = () => {
   const [deputados, setDeputados] = useState([]);
   const [despesas, SetDespesas] = useState([]);
+  const [partidos, setPartidos] = useState([]);
   const params = useParams();
 
   const data = {
@@ -40,8 +42,13 @@ export const DeputadosDetalhes = () => {
     ],
   };
 
+  const getPartido = () => {
+    getPartidosByID(params.id).then((results) => setPartidos(results));
+  }
+
   useEffect(() => {
     getDeputadoDetail(params.id).then((response) => setDeputados(response));
+    getPartido();
   }, [params.id]);
 
   useEffect(() => {
@@ -69,7 +76,9 @@ export const DeputadosDetalhes = () => {
           <div className="textosub">
             <h1 className="text-primary">Gastos feito pelo Deputado {deputados.nomeCivil} </h1>
           </div>
-          <div className="grafico" style={{ width: 700 }}>
+        </div>
+        <div className="grafico">
+          <div style={{ width: 700 }}>
             <BarChart chartData={data} />
           </div>
         </div>

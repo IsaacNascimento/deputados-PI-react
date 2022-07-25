@@ -8,7 +8,6 @@ import { Link, useParams } from "react-router-dom";
 export const PartidosList = () => {
   const [partidos, setPartidos] = useState();
   const params = useParams();
-  console.log(partidos);
 
   const [page, setPage] = useState(1);
   const [perPage] = useState(12);
