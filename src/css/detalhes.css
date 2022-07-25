@@ -5,10 +5,17 @@
   margin-top: 10px;
 }
 
+<<<<<<< HEAD
+/* .aliamento {
+    margin-left: 400px;
+    margin-top: 20;
+} */
+=======
 .aliamento {
   margin-left: 400px;
   margin-top: 20;
 }
+>>>>>>> cb2c271f458bb9bf8d40e592daa731ea3aac8d05
 .img-detalhes {
   display: flex;
   width: 30%;
